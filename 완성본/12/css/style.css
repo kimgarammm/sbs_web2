@@ -1,14 +1,13 @@
-@charset "UTF-8";
 
 /* 공통 */
 html {}
-
-body { }
+/* 기본 폰트 적용 */
+body { font-family: 'Noto Sans KR', sans-serif; }
 
 /* 포인트 폰트 */
 .title { font-family: 'Hi Melody', cursive; }
 
-/* 전체영역 */
+/* 전체 영역 */
 .wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -17,6 +16,7 @@ body { }
 
 /* 제목 */
 .page-title { font-size: 5rem; margin: 40px; }
+
 /* 소제목 */
 .sub-title {
     font-size: 1.4rem;
@@ -31,12 +31,13 @@ body { }
 }
 
 /* 메뉴 */
-.main-nav { 
-    display: flex; 
-    align-items: center;    /* 수직 가운데 (한 줄) */
+.main-nav {
     height: 100%;
-    font-size: 1.3rem; 
+    display: flex;
+    align-items: center;        /* 수직 가운데(한 줄) */
+    font-size: 1.3rem;
 }
+
 .main-nav li { margin-left: 36px; }
 .main-nav li a { color: rosybrown; }
 .main-nav li a:hover { color: hotpink; }
@@ -48,17 +49,18 @@ body { }
     margin-bottom: 40px;
 }
 
-#blog .page-title { text-align: center;  } 
+#blog .page-title { text-align: center; }
+
 
 /* 컨텐츠 영역 */
-.blog-contents {
+.blog-content {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
 }
 
 /* 글 영역 */
-article { width: 74%; order : 2; }
+article { width: 74%; order: 2; }
 
 /* 글 영역 - 제목 영역 */
 .post-info {
@@ -66,19 +68,17 @@ article { width: 74%; order : 2; }
     padding-top: 4px;
     margin-bottom: 40px;
 }
-
 .post-title {
     font-size: 3rem;
     margin-left: 130px;
 }
-
 .post-date {
     width: 100px;
     height: 100px;
-    position: absolute;
-    top: 0;
     background-color: bisque;
     border-radius: 50%;
+    position: absolute;
+    top: 0;
     line-height: 40px;
     font-size: 1.5rem;
     color: brown;
@@ -86,7 +86,7 @@ article { width: 74%; order : 2; }
     padding-top: 10px;
 }
 
-/* 작성일자 - 년도 */
+/* 작성일자 - 연도 */
 .post-date span {
     font-size: 1rem;
     border-top: 1px solid brown;
@@ -100,10 +100,11 @@ article { width: 74%; order : 2; }
 .post-cate { margin-left: 130px; }
 
 /* 이미지 */
-article img { width: 100%; margin-top: 20px; margin-bottom: 20px; }
+article img { width: 100%; margin-top: 20px; margin-bottom: 20px;}
 
 /* 글 */
 article p { margin-bottom: 1rem; }
+
 
 /* 사이드 영역 */
 aside { width: 23%; order: 1; }
@@ -119,6 +120,7 @@ aside p {
     border-radius: 10px;
 }
 
+
 /* 푸터 영역 */
 footer {
     background-color: burlywood;
@@ -127,47 +129,47 @@ footer {
 }
 
 footer p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
-
-/* 반응형 - 모바일 버전 */
-@media (max-width: 750px) {
+/* 반응형 - 모바일 */
+@media screen and (max-width: 750px) {
 
     .page-title { font-size: 2.5rem; }
-    /* 정렬 방향 - 열, 교차 축의 정렬 - 가운데 */
-    .page-header { flex-direction: column; align-items: center; }
+    /* 로고, 메뉴 를 세로로 배치 */
+    .page-header{ flex-direction: column; align-items: center; }
 
-    /* 메뉴 */
+    /* 메뉴 : 글씨크기, 위쪽간격 조절 */
     .main-nav {
         font-size: 1rem;
         margin-top: 30px;
     }
-
+    /* 메뉴간 간격 조절 */
     .main-nav li { margin: 0 20px; }
 
+    /* 타이틀 간격 */
     #blog .page-title { margin-top: 120px; }
 
-    /* 컨텐츠 영역 */
-    .blog-contents {
+    /* 사이드 영역, 컨텐츠 영역 가로 100% */
+    .blog-content {
         flex-direction: column;
     }
-
     article,
     aside {
         width: 100%;
     }
 
-    article { order:  1; }
-    aside { order: 2; margin-top: 60px; }
+    article { order: 1; }
+    aside { order: 2; }
 
+    /* 이외 : 폰트크기, 간격 조절 */
     .post-info { margin-bottom: 30px; }
 
-    .post-date {
+    .post-date { 
         width: 70px;
         height: 70px;
         font-size: 1rem;
-        line-height: 1.2rem
+        line-height: 1.2rem;
     }
 
     .post-date span {
@@ -175,18 +177,16 @@ footer p {
         padding-top: 2px;
     }
 
-    .post-title { 
-        font-size: 2rem;
-    }
-
-    .post-cate {
-        shape-outside: 0.8rem;
-        margin-top: 10px;
-    }
+    .post-title { font-size: 2rem; }
+    .post-cate { margin-top: 2px;}
 
     .post-title,
-    .post-cate { 
+    .post-cate {
         margin-left: 80px;
     }
+
+    article { margin-bottom: 50px;}
+
+
 
 }

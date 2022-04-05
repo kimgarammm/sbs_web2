@@ -7,7 +7,6 @@
     padding-bottom: 500px;
 }
 
-/* container & item */
 .grid-container {
     display: grid;
     border: 1px solid lightcoral;
@@ -33,11 +32,12 @@
 
 /* item 속성 : grid-row */
 .grid-row .item1 {
-    grid-row: 1 / span 2;         /* span : 확장할 라인 개수를 지정 */
-    /* grid-row: 1 / 3; */        /* 단축속성 : grid-row-start / grid-row-end */
-    /* grid-row-start: 1; */      /* 개별속성 */
-    /* grid-row-end: 3; */        /* 개별속성 */
+    grid-row: 1 / span 2;   /* span : 확장할 라인 개수 지정 */
+    /* grid-row: 1 / 3; */   /* 단축속성 : grid-row-start / grid-row-end */
+    /* grid-row-start: 1; */ /* 개별속성 */
+    /* grid-row-end: 3; */   /* 개별속성 */
 }
+
 
 .grid-column {
     grid-template-columns: auto auto auto auto;
@@ -47,11 +47,12 @@
 
 /* item 속성 : grid-column */
 .grid-column .item1 {
-    grid-column: 1 / span 2;         /* span : 확장할 라인 개수를 지정 */
-    /* grid-column: 1 / 3; */        /* 단축속성 : grid-column-start / grid-column-end */
-    /* grid-column-start: 1; */      /* 개별속성 */
-    /* grid-column-end: 3; */        /* 개별속성 */
+    /* grid-column: 1 / span 2; */   /* span : 확장할 라인 개수 지정 */
+    /* grid-column: 1 / 3; */   /* 단축속성 : grid-column-start / grid-column-end */
+    /* grid-column-start: 1; */ /* 개별속성 */
+    /* grid-column-end: 3; */   /* 개별속성 */
 }
+
 
 .grid-area {
     grid-template-columns: repeat(4, auto);
@@ -59,7 +60,10 @@
     padding: 10px;
 }
 
-/* item 속성 : grid-area - (grid-row, grid-column 단축) */
+
+/* item 속성 : grid-area 
+    - (grid-row, grid-column 단축)
+*/
 .grid-area .item1 {
     /* row-start / column-start / row-end / column-end */
     grid-area: 1 / 1 / 3 / 3;
@@ -80,11 +84,12 @@
 .grid-area-name .footer { grid-area: footer; }
 
 .grid-area-name {
-    grid-template-areas: 
+    grid-template-areas:
         /* 배치될 Grid 아이템의 영역이름 지정 */
-        'header header header header'   /* 1행 */
-        'aside aside main main'         /* 2행 */
-        'footer footer footer footer'   /* 3행 */
+        /* 1열  2열     3열     4열 */
+        'header header header header'       /* 1행 */
+        'aside  aside  main   main'         /* 2행 */
+        'footer footer footer footer'       /* 3행 */
         ;
 }
 
@@ -119,16 +124,18 @@
     padding: 5px;
 }
 
-.justify-self .justify-start { justify-self: start;}
-.justify-self .justify-center { justify-self: center;}
-.justify-self .justify-end { justify-self: end;}
-.justify-self .justify-stretch { justify-self: stretch; width: auto;}
+.justify-self .justify-start { justify-self: start; }
+.justify-self .justify-center { justify-self: center; }
+.justify-self .justify-end { justify-self: end; }
+.justify-self .justify-stretch { justify-self: stretch; width: auto; }
+
+
 
 
 /* item 속성 - place-self */
 .place-self {
-    grid-template-columns: auto auto;
-    grid-template-rows: 200px 200px;
+    grid-template-columns: auto ;
+    grid-template-rows: 300px ;
 }
 
 .place-self .item {
@@ -137,21 +144,22 @@
     padding: 5px;
 }
 
-.place-self .place-center { 
-    /* align-self  justify-self */
+.place-self .place-center {
     place-self: center center;
+    /* align-self justify-self */
 }
+
 
 .order {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
 }
 
-.order .order-1 { order: -1; }
-.order .order1 { order: 1; }
-.order .order2 { order: 2; }
-.order .order3 { order: 3; }
-.order .order5 { order: 5; } 
+.order .order-1 { order: -1;}
+.order .order1 { order: 1;}
+.order .order2 { order: 2;}
+.order .order3 { order: 3;}
+.order .order5 { order: 5;}
 
 .z-index {
     grid-template-rows: repeat(2, 1fr);
@@ -176,3 +184,4 @@
     grid-column: 2 / 4;
     background-color: mediumseagreen;
 }
+

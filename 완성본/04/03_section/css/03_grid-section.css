@@ -1,5 +1,4 @@
 
-
 * { margin: 0; padding: 0; }
 
 body {
@@ -10,13 +9,15 @@ body {
     display: grid;
     padding: 1rem;
     /* 
-        grid-template-columns 
+        grid-template-columns
         : 그리드 레이아웃의 열의 수와 크기를 지정하는 속성
     */
     /* repeat(반복횟수, 반복값) */
     /* minmax(최솟값, 최댓값) */
-    /* fr 단위 : 그리드 레이아웃의 공간 비율을 나타내는 단위 (fraction) */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* fr 단위 : 그리드 레이아웃의 공간 비율을 나타내는 단위
+        ( fraction - 단위분수  (1/N) )
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
     grid-gap: 1rem;
 }
 
@@ -34,16 +35,15 @@ body {
     height: 250px;
     position: relative;
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0%, 100% 87%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
 }
 
 .item .img-box img {
     width: 100%;
     height: auto;
     position: absolute;
-    top: 0%;
+    top: 0;
 }
-
 
 .item button {
     position: absolute;
@@ -68,15 +68,11 @@ body {
     padding: 0 10px 20px;
     text-align: center;
 }
-
-.item .content h2 { margin: 10px 0;}
+.item .content h2 { margin: 10px 0; }
 .item .content .desc { margin-bottom: 20px; }
-.item .content .price { 
+.item .content .price {
     position: relative;
     width: 100px;
     font-size: 1.2rem;
     font-weight: bold;
- }
-
-
-
+}

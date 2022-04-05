@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
 /* reset */
 * {margin: 0;padding: 0;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
@@ -7,7 +9,9 @@ a {color: inherit; text-decoration: inherit;}
 li {list-style: none;}
 img {vertical-align: middle;}
 
+
 body { font-family: 'Noto Sans KR', sans-serif; }
+
 
 .claerfix {
     clear: both;
@@ -15,32 +19,25 @@ body { font-family: 'Noto Sans KR', sans-serif; }
     content: '';
 }
 
-/* header */
+/* 헤더 */
 header { margin-bottom: 20px; }
 
 /* 로그인 | 회원가입 */
-/* header - userMenu */
 #userMenu { width: 1050px; margin: 0 auto; }
-#userMenu * {
-    font-weight: 400;
-    letter-spacing: -1px;
-}
-
+#userMenu * { font-weight: 400; letter-spacing: -1px; }
 #userMenu .list_menu {
     display: flex;
     justify-content: flex-end;  /* 주축 종료지점에 정렬 (오른쪽에 배치) */
 }
 
-#userMenu .menu {
-    position: relative;
-}
+#userMenu .menu { position: relative; }
 
 /* userMenu 구분기호 */
 /* 로그인 | 회원가입 | 고객센터 */
-/* 가상선택자 :after  - 문장의 마지막 영역 선택 */
+/* 가상선택자 :after - 문장의 마지막 영역을 선택 */
 /* 가상선택자 :not(제외할 선택자)
    - 지정된 여러 개의 선택자 중에서 제외를 시킨다.
- */
+*/
 #userMenu .menu:not(.last)::after {
     content: '';
     float: right;
@@ -53,11 +50,14 @@ header { margin-bottom: 20px; }
 #userMenu .menu .link_menu { padding: 0 13px; }
 
 /* 헤더 - 로고 */
-#headerLogo { position: relative; width: 1050px; height: 63px; margin: 0 auto; }
-#headerLogo .logo { display: flex; justify-content: center; /* 항목을 가운데 정렬 */ }
+#headerLogo { 
+    position: relative; width: 1050px; height: 63px; margin: 0 auto;
+}
+
+#headerLogo .logo { display: flex; justify-content: center; }
 #headerLogo .logo img { width: 103px; height: 79px; }
 
-/* gnb */
+/* GNB */
 #gnb {
     position: sticky;
     top: 0;
@@ -65,20 +65,18 @@ header { margin-bottom: 20px; }
     z-index: 1000;
     display: flex;
     justify-content: center;
-    /* box-shadow : X Y blur color */
-    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-#gnb .gnb_kurly { width: 1050px; background-color: #fff; letter-spacing: -1px; }
+#gnb .gnb_kurly { width: 1050px; background-color: white; letter-spacing: -1px; }
 #gnb .inner_gnbkurly { position: relative; width: 1050px; height: 56px; margin: 0 auto; }
 
-/* 메뉴영역 - 메인메뉴 */
+/* 메뉴 영역 - 메인메뉴 */
 #gnb .gnb_main ul.gnb a {
     float: left;
     width: 124px;
     height: 55px;
     padding: 16px 0 0;
-    font-size: 16px;
     color: #333;
     line-height: 20px;
     text-align: center;
@@ -99,6 +97,7 @@ header { margin-bottom: 20px; }
     background: url(../img/ico_gnb_all_off.png) no-repeat;
 }
 
+
 /* 검색 영역 */
 #gnb .gnb_search {
     position: absolute;
@@ -111,14 +110,14 @@ header { margin-bottom: 20px; }
 #gnb .gnb_search .input_search {
     width: 195px;
     height: 36px;
-    padding: 0 23px 0 14px;
+    background-color: #f7f7f7;
     border: 1px solid #f7f7f7;
     border-radius: 18px;
-    background-color: #f7f7f7;
+    padding: 0 23px 0 14px;
     font-weight: 400;
     color: #666;
     line-height: 16px;
-    outline: none;  /* 입력상자의 윤곽선 없앰 */
+    outline: none;          /* 입력상자의 윤곽선을 없앰 */
 }
 
 /* 검색 영역 - 검색 아이콘 */
@@ -130,22 +129,6 @@ header { margin-bottom: 20px; }
     top: 3px;
 }
 
-/* 배송지 설정 아이콘 */
-#gnb .btn_location {
-    overflow: hidden;
-    position: absolute;
-    right: 51px;
-    top: 10px;
-    width: 36px;
-    height: 36px;
-    border: none;
-    background: url(../img/ico_delivery_setting.svg) 
-                no-repeat 50% 50%;
-    font-size: 0;
-    text-align: -9999px;
-    cursor: pointer;
-}
-
 /* 장바구니 아이콘 */
 #gnb .cart_count {
     position: absolute;
@@ -155,23 +138,38 @@ header { margin-bottom: 20px; }
 
 #gnb .cart_count .inner_cartcount {
     text-align: center;
-    font-weight: 400;
+    text-shadow: 400;
 }
 
 #gnb .cart_count .btn_cart {
+    background: url(../img/ico_cart.svg) no-repeat 50% 50%; 
     display: block;
     width: 36px;
     height: 36px;
-    background: url(../img/ico_cart.svg) no-repeat 50% 50%;
 }
 
-section {
-    width: 1050px;
+/* 배송지 설정 아이콘 */
+#gnb .btn_location {
+    overflow: hidden;
+    position: absolute;
+    right: 51px;
+    top: 10px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: url(../img/ico_delivery_setting.svg) no-repeat 50% 50%;
+    font-size: 0;
+    cursor: pointer;
+}
+
+
+/* section */
+section { 
+    width: 1050px; 
     height: 400px;
     margin: 0 auto;
     border: 1px solid cornflowerblue;
 }
-
 
 /* 카테고리 풀다운 메뉴 */
 #gnb .gnb_sub {
@@ -181,33 +179,10 @@ section {
     position: absolute;
     top: 55px;
     left: 0;
-    width: 219px;
-    /* width: 450px; */
-    z-index: 300;
     padding-top: 1px;
+    z-index: 300;
+    width: 219px;
 }
-
-/* 1차 메뉴에 마우스 올렸을 때 */
-#gnb .gnb_sub:hover { 
-    animation: slideRight 0.4s; 
-    /* 애니메이션의 마지막 프레임에서 고정 */
-    animation-fill-mode: forwards;
-}
-
-@keyframes slideRight {
-    0% {}
-    100% { width: 450px; }
-}
-
-/* 1차 메뉴에 마우스 올렸을 때, 2차 메뉴 출력 */
-#gnb .gnb_sub .inner_sub ul.gnb_menu li:hover > ul.sub_menu {
-    display: block;
-}
-
-#gnb .gnb_sub .inner_sub ul.gnb_menu li:hover {
-    background-color: rgb(246,246,246);
-}
-
 
 /* 1차 메뉴 */
 #gnb .gnb_sub .inner_sub {
@@ -218,6 +193,7 @@ section {
 
 #gnb .gnb_sub .inner_sub ul.gnb_menu {
     width: 219px;
+    /* width: 450px; */
     height: 500px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -233,11 +209,34 @@ section {
     overflow: hidden;
     width: 100%;
     height: 40px;
-    padding: 8px 0 0 14px;  /* top right bottom left */
+    padding: 8px 0 0 14px;
     cursor: pointer;
 }
 
-#gnb .gnb_sub .ico {
+/* 1차 메뉴에 마우스 올렸을 때 */
+#gnb .gnb_sub:hover {
+    animation: slideRight 1s;
+    /* 애니메이션 마지막 프레임에서 고정 */
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+    0% { width: 219px; }   
+    100% { width: 450px; }
+}
+
+/* 1차 메뉴에 마우스 올렸을 때, 2차 메뉴 출력 */
+#gnb .gnb_sub .inner_sub ul.gnb_menu li:hover > ul.sub_menu {
+    display: block;
+}
+
+#gnb .gnb_sub .inner_sub ul.gnb_menu > li:hover {
+    background-color: rgb(246,246,246);
+}
+
+
+/* 메뉴 아이콘 */
+#gnb .gnb_sub .ico { 
     float: left;
     width: 24px;
     height: 24px;
@@ -251,6 +250,7 @@ section {
 /* 메뉴 아이콘 활성화/비활성화 */
 #gnb .gnb_sub .ico .ico_off { display: block; }
 #gnb .gnb_sub .ico .ico_on { display: none; }
+
 #gnb .gnb_sub ul.gnb_menu li:hover .ico_off { display: none; }
 #gnb .gnb_sub ul.gnb_menu li:hover .ico_on { display: block; }
 #gnb .gnb_sub ul.gnb_menu li:hover .txt {
@@ -267,23 +267,27 @@ section {
     white-space: nowrap;
 }
 
-
-/* 2차 메뉴  */
+/* 2차 메뉴 */
 #gnb .gnb_sub ul.sub_menu {
     display: none;
     /* display: block; */
     position: absolute;
-    left: 200px;
-    top: 5px;
+    top: 0;
+    left: 219px;
     width: 248px;
     height: 100%;
     padding-left: 20px;
     background: url(../img/bg_1_1.gif) repeat 0 0;
 }
 
-#gnb .gnb_sub ul.sub_menu li { width: 100%; text-align: left; }
-#gnb .gnb_sub ul.sub_menu li:first-child { padding-top: 11px; }
-#gnb .gnb_sub ul.sub_menu li a.sub { 
+#gnb .gnb_sub ul.sub_menu li {
+    width: 100%;
+    text-align: left;
+}
+#gnb .gnb_sub ul.sub_menu li:first-child {
+    padding-top: 11px;
+}
+#gnb .gnb_sub ul.sub_menu li a.sub {
     display: block;
     overflow: hidden;
     height: 40px;
@@ -292,8 +296,10 @@ section {
     color: #333;
     line-height: 18px;
     cursor: pointer;
- }
+}
+
+/* 2차 메뉴에 마우스 올렸을 때 */
 #gnb .gnb_sub ul.sub_menu li:hover a.sub span {
     color: #5f0080;
     border-bottom: 1px solid #5f0080;
- }
+}
