@@ -92,21 +92,21 @@ section.main{
     height: 100vh;
     min-height: 815px;
     max-height: 815px;
-    background: url(../img/img_mainvisual_bg.png)no-repeat center center;
+    background: url(../img/img_mainvisual_bg.png) no-repeat center center;
     position: relative;
 }
-section.main.main-title{
+section.main .main-title{
     margin: 50px auto;
     position: absolute;
     top: 50px;
-    left: 50px;
+    left: 50%;
     transform: translateX(-50%);
     width: auto;
     text-align: center;
 
 }
-section.main.main-title .title{font-size: 52px;}
-section.main.main-title .sub-title{font-size: 24px;}
+section.main .main-title .title{font-size: 52px;}
+section.main .main-title .sub-title{font-size: 24px;}
 
 /*섹션:main-라면 슬라이드*/
 .ramen-slide{position: absolute; left: 50%;}
